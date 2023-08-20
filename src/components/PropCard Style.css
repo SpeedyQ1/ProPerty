@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    margin-top: 0px;
+}
+.card{
+    width: 300px;
+    height: auto;
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 35px;
+    text-align: center;
+    background: rgba(108,117,125,0.35);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(108,117,125,0.175);
+}
+
+.pic{
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-bottom: 20px;
+
+}
+
+.fav-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #2f3c50cc;
+    border-bottom-left-radius: 20px;
+    padding: 5px;
+
+}
+
+.info{
+    margin-bottom: 20px;
+}
+
+.view-btn{
+    margin-bottom: 20px;
+}
