@@ -13,7 +13,7 @@ function ReactSimplyCarouselExample({ TheData }) {
       itemsToShow={1}
       itemsToScroll={1}
       forwardBtnProps={{
-        //here you can also pass className, or any other button element attributes
+        className: "carousel-btn",
         style: {
           alignSelf: "center",
           background: "#000000b5",
@@ -29,11 +29,12 @@ function ReactSimplyCarouselExample({ TheData }) {
           margin: 10,
           position: "relative",
           zIndex: 5,
-          right: "55px",
+          right: "0",
         },
         children: <span>{`>`}</span>,
       }}
       backwardBtnProps={{
+        className: "carousel-btn",
         style: {
           alignSelf: "center",
           background: "#000000b5",
@@ -49,7 +50,7 @@ function ReactSimplyCarouselExample({ TheData }) {
           margin: 10,
           position: "relative",
           zIndex: 5,
-          left: "55px",
+          left: "0",
         },
         children: <span>{`<`}</span>,
       }}
@@ -74,10 +75,11 @@ function ReactSimplyCarouselExample({ TheData }) {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              position: "relative",
             }}
           >
             <img
-              style={{ width: "50vw", maxWidth: "750px", height: "auto" }}
+              style={{ width: "90vw", maxWidth: "750px", height: "auto" }}
               src={item.imgSrc}
               alt=""
             />

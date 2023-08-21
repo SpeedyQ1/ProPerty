@@ -10,13 +10,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #F8F9FA;
+  background-color: #f8f9fa;
 }
 
 #page-container {
   width: 100%;
 }
-
 
 #background-img {
   position: fixed;
@@ -44,7 +43,6 @@
   overflow: hidden;
   width: 50vw;
   max-width: 600px;
- 
 }
 
 #the-img {
@@ -159,6 +157,9 @@
 #filter-section {
   display: flex;
   flex-direction: row;
+  width: 90%;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .filters-select {
@@ -199,5 +200,9 @@ option {
 
   #wave-up-img {
     top: 100px;
-}
+  }
+
+  #background-img {
+    top: 65px;
+  }
 }

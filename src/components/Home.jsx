@@ -24,17 +24,16 @@ function Home() {
           <Loader />
         </div>
       ) : (
-        <div>
+        <div id="home-page-container">
           <div id="main-img">
-            <img id="image" src={buildings3} alt="" />
-            <div id="position-divs">
-              <h1 id="intrudoction">
+            <img id="home-page-image" src={buildings3} alt="" />
+              <h1 id="introduction">
                 Unlocking your real estate dreams, one property at a time!
               </h1>
-            </div>
           </div>
           <div id="carousel-section">
-            <h1>A small taste of our properties</h1>
+            
+            <h1 id="carousel-title">A small taste of our properties</h1>
             <div id="carousel">
               {TheData.length > 0 && (
                 <ReactSimplyCarouselExample
