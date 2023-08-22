@@ -197,10 +197,11 @@ option {
     width: 100%;
     margin-top: 20px;
   }
-
-  #wave-up-img {
-    top: 100px;
+  #the-prop-container {
+    height: calc(100vh - 65px);
   }
+
+
 
   #background-img {
     top: 65px;

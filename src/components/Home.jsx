@@ -28,7 +28,7 @@ function Home() {
           <div id="main-img">
             <img id="home-page-image" src={buildings3} alt="" />
               <h1 id="introduction">
-                Unlocking your real estate dreams, one property at a time!
+                Unlocking your real estate dreams, one property at a time!  
               </h1>
           </div>
           <div id="carousel-section">
