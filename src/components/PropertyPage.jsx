@@ -36,42 +36,39 @@ function PropertyPage() {
   let city = thePropObj.city;
 
   return (
-    <>
-      {loading ? (
+    <div id="the-prop-container">
+      {loading && (
         <div className="loader-container">
           <Loader />
         </div>
-      ) : (
-        <div id="the-prop-container">
-          <img id="wave-up-img" src={wavesUp} alt="" />
-          <div id="top-section">
-            <div id="the-prop-img" price={`${price.toLocaleString()}$`}>
-              <img id="the-img" src={`${img}`} alt="" />
-            </div>
+      )}
+      <img id="wave-up-img" src={wavesUp} alt="" />
+      <div id="top-section">
+        <div id="the-prop-img" price={`${price.toLocaleString()}$`}>
+          <img id="the-img" src={`${img}`} alt="" />
+        </div>
 
-            <div id="the-prop-info">
-              <h1>Propetry Info</h1>
-              <div id="info-bubble-section">
-                <div id="adress" className="info-bubble">
-                  <LocationOnOutlinedIcon />
-                  {`${adress}, ${city},  ${country} `}
-                </div>
-                <div id="size" className="info-bubble">
-                  <HomeOutlinedIcon />
-                  {`${size} ${units}`}{" "}
-                </div>
-                <div id="bedrooms" className="info-bubble">
-                  <BedRoundedIcon /> bedrooms: {bedrooms}
-                </div>
-                <div id="bathrooms" className="info-bubble">
-                  <BathtubOutlinedIcon /> bathrooms: {bathrooms}
-                </div>
-              </div>
+        <div id="the-prop-info">
+          <h1>Propetry Info</h1>
+          <div id="info-bubble-section">
+            <div id="adress" className="info-bubble">
+              <LocationOnOutlinedIcon />
+              {`${adress}, ${city},  ${country} `}
+            </div>
+            <div id="size" className="info-bubble">
+              <HomeOutlinedIcon />
+              {`${size} ${units}`}{" "}
+            </div>
+            <div id="bedrooms" className="info-bubble">
+              <BedRoundedIcon /> bedrooms: {bedrooms}
+            </div>
+            <div id="bathrooms" className="info-bubble">
+              <BathtubOutlinedIcon /> bathrooms: {bathrooms}
             </div>
           </div>
         </div>
-      )}
-    </>
+      </div>
+    </div>
   );
 }
 

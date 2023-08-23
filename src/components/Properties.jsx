@@ -81,123 +81,120 @@ function Properties() {
 
   console.log(filters);
   return (
-    <>
-      {loading ? (
+    <div id="page-container">
+      {loading && (
         <div className="loader-container">
           <Loader />
         </div>
-      ) : (
-        <div id="page-container">
-          <img
-            id="background-img"
-            src="https://wallpapercave.com/wp/wp3137905.jpg"
-            alt=""
-          />
-          <div id="properties-page-content">
-            <div id="filter-section">
-              <select
-                className="filters-select"
-                value={selectedValueCountry}
-                id="country"
-                onChange={(e) => {
-                  setSelectedValueCountry(e.target.value);
-                  setFilters((prev) => ({ ...prev, country: e.target.value }));
-                }}
-              >
-                <option disabled hidden value="">
-                  Country
-                </option>
-                {createAnOption("country")}
-              </select>
+      )}
+      <img
+        id="background-img"
+        src="https://wallpapercave.com/wp/wp3137905.jpg"
+        alt=""
+      />
+      <div id="properties-page-content">
+        <div id="filter-section">
+          <select
+            className="filters-select"
+            value={selectedValueCountry}
+            id="country"
+            onChange={(e) => {
+              setSelectedValueCountry(e.target.value);
+              setFilters((prev) => ({ ...prev, country: e.target.value }));
+            }}
+          >
+            <option disabled hidden value="">
+              Country
+            </option>
+            {createAnOption("country")}
+          </select>
 
-              <select
-                className="filters-select"
-                value={selectedValueCity}
-                id="city"
-                onChange={(e) => {
-                  setSelectedValueCity(e.target.value);
-                  setFilters((prev) => ({ ...prev, city: e.target.value }));
-                }}
-              >
-                <option disabled hidden value="">
-                  City
-                </option>
+          <select
+            className="filters-select"
+            value={selectedValueCity}
+            id="city"
+            onChange={(e) => {
+              setSelectedValueCity(e.target.value);
+              setFilters((prev) => ({ ...prev, city: e.target.value }));
+            }}
+          >
+            <option disabled hidden value="">
+              City
+            </option>
 
-                {createAnOption("city")}
-              </select>
+            {createAnOption("city")}
+          </select>
 
-              <select
-                className="filters-select"
-                value={selectedValueBedrooms}
-                id="bedrooms"
-                onChange={(e) => {
-                  setFilters((prev) => ({ ...prev, bedrooms: e.target.value }));
-                  setSelectedValueBedrooms(e.target.value);
-                }}
-              >
-                <option disabled hidden value="">
-                  Bedrooms
-                </option>
-                {createAnOption("bedrooms")}
-              </select>
+          <select
+            className="filters-select"
+            value={selectedValueBedrooms}
+            id="bedrooms"
+            onChange={(e) => {
+              setFilters((prev) => ({ ...prev, bedrooms: e.target.value }));
+              setSelectedValueBedrooms(e.target.value);
+            }}
+          >
+            <option disabled hidden value="">
+              Bedrooms
+            </option>
+            {createAnOption("bedrooms")}
+          </select>
 
-              <div
-                id="clear-btn"
-                className="filters-select"
-                onClick={() => {
-                  setFilters({ country: "all", city: "all", bedrooms: "all" });
-                  setTheData(TheDataCopy);
-                  setSelectedValueCountry("");
-                  setSelectedValueCity("");
-                  setSelectedValueBedrooms("");
-                }}
-              >
-                clear
-              </div>
+          <div
+            id="clear-btn"
+            className="filters-select"
+            onClick={() => {
+              setFilters({ country: "all", city: "all", bedrooms: "all" });
+              setTheData(TheDataCopy);
+              setSelectedValueCountry("");
+              setSelectedValueCity("");
+              setSelectedValueBedrooms("");
+            }}
+          >
+            clear
+          </div>
 
-              <div
-                className="filters-select"
-                onClick={() => {
-                  setTheData([...new Set(favArr)]);
-                }}
-              >
-                favorite
-              </div>
-            </div>
-
-            <select
-              id="sort"
-              className="filters-select"
-              onChange={(e) => sortByPrice(e.target.value)}
-            >
-              <option value="high-to-low">High To Low</option>
-              <option value="Low-To-High">Low To High</option>
-              <option disabled hidden value="">
-                Sort By Price
-              </option>
-            </select>
-            <div id="prop-section">
-              {TheData.length > 0 ? (
-                TheData.map((value) => {
-                  return (
-                    <PropCard
-                      key={value?.zpid}
-                      value={value}
-                      favArr={favArr}
-                      setFavArr={setFavArr}
-                    />
-                  );
-                })
-              ) : (
-                <div className="no-favorite-div">
-                  <h1>You currently have no favorites</h1>
-                </div>
-              )}
-            </div>
+          <div
+            className="filters-select"
+            onClick={() => {
+              setTheData([...new Set(favArr)]);
+            }}
+          >
+            favorite
           </div>
         </div>
-      )}
-    </>
+
+        <select
+          id="sort"
+          className="filters-select"
+          onChange={(e) => sortByPrice(e.target.value)}
+        >
+          <option value="high-to-low">High To Low</option>
+          <option value="Low-To-High">Low To High</option>
+          <option disabled hidden value="">
+            Sort By Price
+          </option>
+        </select>
+        <div id="prop-section">
+          {TheData.length > 0 ? (
+            TheData.map((value) => {
+              return (
+                <PropCard
+                  key={value?.zpid}
+                  value={value}
+                  favArr={favArr}
+                  setFavArr={setFavArr}
+                />
+              );
+            })
+          ) : (
+            <div className="no-favorite-div">
+              <h1>You currently have no favorites</h1>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
 export default Properties;
