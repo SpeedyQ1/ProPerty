@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link, Outlet } from "react-router-dom";
 import logoBlack from "./../assets/myLogoBlack.png";
 import logoWhite from "./../assets/myLogoWhiteBigText.png";
-
 import { useNavigate } from "react-router-dom";
+
 function Layout() {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
